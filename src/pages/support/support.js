@@ -44,6 +44,7 @@ function ProfessionalSupportPage() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const isTablet = useMediaQuery('(max-width: 1024px)');
 
   // Your consistent color palette
   const colors = isDark ? {

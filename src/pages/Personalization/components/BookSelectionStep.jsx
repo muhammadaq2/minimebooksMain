@@ -7,7 +7,9 @@ import {
   rem,
   Image,
   Badge,
-  Card
+  Card,
+  Center,
+  SimpleGrid
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { 
