@@ -19,7 +19,7 @@ import {
   Tooltip,
   Affix
 } from '@mantine/core';
-import { useMediaQuery, useDisclosure } from '@mantine/hooks';
+import { useMediaQuery } from '@mantine/hooks';
 import { 
   IconSearch,
   IconShoppingCart,

@@ -24,7 +24,6 @@ function OrderSummary({ colors, showCoupon = true, title = "Order Summary" }) {
     appliedCoupon,
     applyCoupon,
     removeCoupon,
-    getSubtotal,
     getShippingCost,
     getDiscountAmount,
     getTotal

@@ -9,7 +9,6 @@ import {
   Avatar,
   rem,
 } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
 import { 
   IconCrown,
   IconBolt,
