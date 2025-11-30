@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
-import { Box, Text, rem, ActionIcon, Group, Loader } from '@mantine/core';
+import { Box, Text, rem, ActionIcon, Loader } from '@mantine/core';
 import { IconChevronLeft, IconChevronRight, IconX, IconMaximize } from '@tabler/icons-react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Float, Environment, OrbitControls, useTexture } from '@react-three/drei';
+import { Float, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Book configuration - Fixed dimensions for better visibility

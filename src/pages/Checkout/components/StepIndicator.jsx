@@ -3,7 +3,6 @@ import { Box, Group, Text, rem } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 
 function StepIndicator({ currentStep, colors }) {
-  const isMobile = useMediaQuery('(max-width: 768px)');
   const isSmallMobile = useMediaQuery('(max-width: 480px)');
 
   const steps = [

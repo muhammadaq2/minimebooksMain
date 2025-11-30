@@ -14,8 +14,7 @@ import {
   IconHeart,
   IconShieldCheck,
   IconCertificate,
-  IconUsers,
-  IconBook2
+  IconUsers
 } from '@tabler/icons-react';
 import TestimonialCard from '../../ui/TestimonialCard/TestimonialCard';
 

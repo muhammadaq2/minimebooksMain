@@ -15,17 +15,15 @@ import {
   Image,
   Badge,
   Card,
-  Divider,
   Tabs,
   Rating,
   Transition,
   Paper,
   ActionIcon,
-  Tooltip,
-  Anchor
+  Tooltip
 } from '@mantine/core';
 import { useMediaQuery, useHover, useIntersection } from '@mantine/hooks';
-import { IconHeart, IconShare, IconStar, IconShieldCheck, IconTruck, IconRefresh, IconEye, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
+import { IconHeart, IconShare, IconShieldCheck, IconTruck, IconRefresh, IconEye, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 
 // Import header and footer components
 import FloatingCircularHeader from '../../components/layout/Header/FloatingCircularHeader';
@@ -55,7 +53,7 @@ function ProductDetailPage({ productId = 1, onNavigate = () => {} }) {
   const [mounted, setMounted] = useState(false);
   const imageRef = useRef(null);
   const { hovered: imageHovered, ref: imageHoverRef } = useHover();
-  const { ref: intersectionRef, entry } = useIntersection({
+  const { ref: intersectionRef } = useIntersection({
     threshold: 0.1,
   });
 

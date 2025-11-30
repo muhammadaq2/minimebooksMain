@@ -17,7 +17,6 @@ import {
   IconEye, 
   IconChevronLeft, 
   IconChevronRight,
-  IconBook,
   IconSparkles
 } from '@tabler/icons-react';
 

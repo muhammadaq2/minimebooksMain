@@ -14,14 +14,11 @@ import {
   Grid,
   Paper,
   Badge,
-  Avatar,
   Divider,
-  Notification,
   ActionIcon
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { 
-  IconHeadphones,
   IconSparkles,
   IconSend,
   IconStar,
@@ -33,18 +30,10 @@ import {
   IconClock,
   IconCheck,
   IconUser,
-  IconX,
-  IconWand,
-  IconCircleDot,
   IconHelp,
   IconLifebuoy,
   IconFileText,
   IconBulb,
-  IconUsersGroup,
-  IconExclamationCircle,
-  IconAlertTriangle,
-  IconCircle,
-  IconCircleFilled,
   IconMapPin,
   IconWorld
 } from '@tabler/icons-react';
@@ -55,7 +44,6 @@ function ProfessionalSupportPage() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
 
   // Your consistent color palette
   const colors = isDark ? {
@@ -89,15 +77,7 @@ function ProfessionalSupportPage() {
     message: ''
   });
   const [loading, setLoading] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
-  // Parallax scroll effect
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Support categories with subcategories
   const supportCategories = [

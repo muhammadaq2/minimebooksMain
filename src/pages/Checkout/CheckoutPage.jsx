@@ -56,7 +56,7 @@ function CheckoutPage() {
   // Mock Stripe payment integration
   const handlePayment = () => {
     // In real implementation, this would redirect to Stripe
-    const stripeUrl = `https://checkout.stripe.com/pay?amount=${Math.round(getTotal() * 100)}&currency=cad`;
+    // const stripeUrl = `https://checkout.stripe.com/pay?amount=${Math.round(getTotal() * 100)}&currency=cad`;
     
     // For demo purposes, we'll show an alert
     alert(`Redirecting to Stripe payment page for $${getTotal().toFixed(2)} CAD`);

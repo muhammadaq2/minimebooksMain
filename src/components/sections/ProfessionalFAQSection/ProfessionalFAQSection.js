@@ -13,7 +13,6 @@ import { useMediaQuery } from '@mantine/hooks';
 import { 
   IconQuestionMark,
   IconChevronDown,
-  IconChevronUp,
   IconShield,
   IconClock,
   IconPalette,

@@ -14,26 +14,16 @@ import {
   Badge,
   Select,
   Tabs,
-  Center,
   ActionIcon,
-  Divider,
-  Image,
-  Skeleton,
   Transition,
-  Modal,
-  ScrollArea,
-  Progress,
   Tooltip,
-  Notification,
-  Affix,
-  Card
+  Affix
 } from '@mantine/core';
 import { useMediaQuery, useDisclosure } from '@mantine/hooks';
 import { 
   IconSearch,
   IconShoppingCart,
   IconStar,
-  IconClock,
   IconCheck,
   IconPlus,
   IconBookmark,
@@ -44,18 +34,10 @@ import {
   IconEye,
   IconPhoto,
   IconEdit,
-  IconDownload,
-  IconShare,
-  IconPrint,
   IconArrowUp,
   IconSortAscending,
-  IconSortDescending,
   IconGridDots,
-  IconList,
-  IconBrandInstagram,
-  IconBrandFacebook,
-  IconBrandTwitter,
-  IconChevronUp
+  IconList
 } from '@tabler/icons-react';
 
 // Import the main header and footer
@@ -749,17 +731,12 @@ function MyBooksPage() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
-  const [opened, { open, close }] = useDisclosure(false);
-  const [shareOpened, { open: shareOpen, close: shareClose }] = useDisclosure(false);
-  const [selectedBook, setSelectedBook] = useState(null);
 
   // Enhanced state management
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('recent');
   const [activeTab, setActiveTab] = useState('all');
   const [viewMode, setViewMode] = useState('grid'); // grid or list
-  const [isLoading, setIsLoading] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   // Color palette - matching site theme

@@ -14,7 +14,6 @@ import { IconX, IconEdit } from '@tabler/icons-react';
 import { useNavigate } from 'react-router-dom';
 
 function ProductCard({ item, onRemove, colors, showActions = true }) {
-  const isMobile = useMediaQuery('(max-width: 768px)');
   const isSmallMobile = useMediaQuery('(max-width: 480px)');
   const navigate = useNavigate();
 

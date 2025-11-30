@@ -10,8 +10,6 @@ import {
   Card,
   Grid,
   Alert,
-  SimpleGrid,
-  Center,
   FileInput,
   Image
 } from '@mantine/core';
@@ -28,7 +26,6 @@ function ChildInformationStep({ formData, onDataUpdate, colors, isMobile, isDark
   // Enhanced mobile breakpoints
   const isSmallMobile = useMediaQuery('(max-width: 480px)');
   const isMediumMobile = useMediaQuery('(max-width: 640px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
   const [errors, setErrors] = useState({});
   const [previewImage, setPreviewImage] = useState(formData.childImagePreview || null);
 

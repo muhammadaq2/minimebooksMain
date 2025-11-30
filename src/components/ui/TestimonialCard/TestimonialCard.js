@@ -38,7 +38,6 @@ function TestimonialCard({
   isDark
 }) {
   const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 768px)');
 
   // Professional theme configurations with icons
   const themeConfig = {

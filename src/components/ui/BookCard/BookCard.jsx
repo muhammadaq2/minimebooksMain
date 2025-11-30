@@ -4,11 +4,9 @@ import {
   Text, 
   Button, 
   Badge, 
-  Group, 
   Box,
   Stack,
-  rem,
-  useMantineColorScheme 
+  rem
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { useNavigate } from 'react-router-dom';

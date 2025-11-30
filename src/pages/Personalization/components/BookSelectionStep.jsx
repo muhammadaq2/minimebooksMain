@@ -7,10 +7,7 @@ import {
   rem,
   Image,
   Badge,
-  Card,
-  Grid,
-  SimpleGrid,
-  Center
+  Card
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { 
@@ -24,8 +21,6 @@ import {
 function BookSelectionStep({ bookData, colors, isMobile, isDark }) {
   // Enhanced mobile breakpoints using hooks
   const isSmallMobile = useMediaQuery('(max-width: 480px)');
-  const isMediumMobile = useMediaQuery('(max-width: 640px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
   
   if (!bookData) {
     return (

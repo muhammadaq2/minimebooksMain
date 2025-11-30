@@ -15,8 +15,6 @@ import {
   IconBrain,
   IconPhoto,
   IconSparkles,
-  IconCpu,
-  IconRobot,
   IconWand,
   IconBolt,
   IconStars
@@ -26,7 +24,6 @@ function AINeuralProcessor() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
   const [processingStage, setProcessingStage] = useState(0);
 
   // Your transformation examples
@@ -246,7 +243,7 @@ function AINeuralProcessor() {
                       >
                         <img 
                           src={currentExample.original}
-                          alt="Input Photo"
+                          alt="Input"
                           style={{
                             width: '100%',
                             height: '100%',
@@ -542,7 +539,7 @@ function AINeuralProcessor() {
                     >
                       <img 
                         src={currentExample.original}
-                        alt="Input Photo"
+                        alt="Input"
                         style={{
                           width: '100%',
                           height: '100%',

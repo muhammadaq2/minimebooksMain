@@ -18,7 +18,6 @@ import {
   IconBrandFacebook,
   IconBrandTwitter,
   IconBrandInstagram,
-  IconBrandLinkedin,
   IconBrandYoutube,
   IconMail,
   IconSend,

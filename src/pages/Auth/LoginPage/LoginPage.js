@@ -22,8 +22,7 @@ import {
   IconStar,
   IconHeart,
   IconBrandGoogle,
-  IconBrandFacebook,
-  IconPlayerPlay
+  IconBrandFacebook
 } from '@tabler/icons-react';
 import FloatingCircularHeader from '../../../components/layout/Header/FloatingCircularHeader';
 

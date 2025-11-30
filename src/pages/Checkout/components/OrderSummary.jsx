@@ -15,7 +15,6 @@ import { IconTag, IconCheck, IconX } from '@tabler/icons-react';
 import { useCart } from '../../../context/CartContext';
 
 function OrderSummary({ colors, showCoupon = true, title = "Order Summary" }) {
-  const isMobile = useMediaQuery('(max-width: 768px)');
   const isSmallMobile = useMediaQuery('(max-width: 480px)');
   
   const {
@@ -57,7 +56,6 @@ function OrderSummary({ colors, showCoupon = true, title = "Order Summary" }) {
     setCouponSuccess('');
   };
 
-  const subtotal = getSubtotal();
   const shipping = getShippingCost();
   const discount = getDiscountAmount();
   const total = getTotal();

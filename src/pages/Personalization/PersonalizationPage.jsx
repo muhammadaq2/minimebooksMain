@@ -7,19 +7,10 @@ import {
   Group,
   Stack,
   Button,
-  Select,
-  TextInput,
   rem,
   useMantineColorScheme,
-  Grid,
-  Image,
-  Badge,
   Card,
-  Paper,
-  ActionIcon,
-  Tooltip,
   Stepper,
-  Progress,
   Transition
 } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
@@ -30,9 +21,7 @@ import {
   IconBook, 
   IconUser, 
   IconEye, 
-  IconShoppingCart,
-  IconWorld,
-  IconCalendar
+  IconShoppingCart
 } from '@tabler/icons-react';
 
 // Import header and footer components
@@ -50,9 +39,6 @@ function PersonalizationPage() {
   const { colorScheme } = useMantineColorScheme();
   const isDark = colorScheme === 'dark';
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const isTablet = useMediaQuery('(max-width: 1024px)');
-  const isSmallMobile = useMediaQuery('(max-width: 480px)');
-  const isMediumMobile = useMediaQuery('(max-width: 640px)');
   
   // State management
   const [currentStep, setCurrentStep] = useState(0);
@@ -67,13 +53,7 @@ function PersonalizationPage() {
     language: 'english'
   });
 
-  useEffect(() => {
-    setMounted(true);
-    // Load book data based on ID
-    loadBookData();
-  }, [id]);
-
-  const loadBookData = () => {
+  const loadBookData = React.useCallback(() => {
     // Mock book data - in real implementation, this would fetch from API
     const bookData = {
       id: id || 1,
@@ -88,7 +68,13 @@ function PersonalizationPage() {
       ...prev,
       selectedBook: bookData
     }));
-  };
+  }, [id]);
+
+  useEffect(() => {
+    setMounted(true);
+    // Load book data based on ID
+    loadBookData();
+  }, [id, loadBookData]);
 
   // Theme colors matching ProductDetailPage
   const colors = isDark ? {

@@ -1,18 +1,15 @@
 import React from 'react';
 import { Box, useMantineColorScheme } from '@mantine/core';
 import FloatingCircularHeader from '../../components/layout/Header/FloatingCircularHeader';
-import PlayfulHero from '../../components/sections/PlayfulHero/PlayfulHero';
 import FloatingVideoHero from '../../components/sections/FloatingVideoHero/FloatingVideoHero';
 import SplitScreenCinemaHero from '../../components/sections/SplitScreenCinemaHero/SplitScreenCinemaHero';
 import ProductGrid from '../../components/ui/ProductGrid/ProductGrid';
 import TestimonialSection from '../../components/sections/TestimonialSection/TestimonialSection';
-import SimpleTransformationDemo from '../../components/sections/SimpleTransformationDemo/SimpleTransformationDemo';
 import ProfessionalFAQSection from '../../components/sections/ProfessionalFAQSection/ProfessionalFAQSection';
 import ProfessionalFooter from '../../components/layout/Footer/ProfessionalFooter';
 
 // Import the transformation and feature components
 import AINeuralProcessor from '../../components/sections/AINeuralProcessor/AINeuralProcessor';
-import PosterShowcaseFeatures from '../../components/sections/PosterShowcaseFeatures/PosterShowcaseFeatures';
 
 function HomePage() {
   const { colorScheme } = useMantineColorScheme();

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 import { Image } from '@mantine/core';
 
 import { 
-  Container, 
   Group, 
   Text, 
   Button, 
@@ -28,7 +27,6 @@ import {
   IconShoppingCart, 
   IconLogin,
   IconUserPlus,
-  IconSettings,
   IconLogout,
   IconChevronDown,
   IconWorld,
@@ -50,7 +48,6 @@ function FloatingCircularHeader() {
   const isTablet = useMediaQuery('(max-width: 768px)');
   const isSmallTablet = useMediaQuery('(max-width: 640px)');
   const isLaptop = useMediaQuery('(max-width: 1200px)');
-  const isDesktop = useMediaQuery('(min-width: 1201px)');
   const isLargeDesktop = useMediaQuery('(min-width: 1440px)');
   const isUltraWide = useMediaQuery('(min-width: 1920px)');
   

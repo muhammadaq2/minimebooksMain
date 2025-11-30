@@ -156,7 +156,7 @@ function SimpleTransformationDemo() {
                   >
                     <img 
                       src={currentExample.originalPhoto}
-                      alt="Original Photo"
+                      alt="Original"
                       style={{
                         width: '100%',
                         height: '100%',
@@ -394,7 +394,7 @@ function SimpleTransformationDemo() {
                   >
                     <img 
                       src={currentExample.originalPhoto}
-                      alt="Original Photo"
+                      alt="Original"
                       style={{
                         width: '100%',
                         height: '100%',
