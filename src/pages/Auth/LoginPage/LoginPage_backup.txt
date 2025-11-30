@@ -1,0 +1,477 @@
+import React, { useState } from 'react';
+import { 
+  Container, 
+  Text, 
+  TextInput,
+  PasswordInput,
+  Button,
+  Box,
+  Group,
+  Stack,
+  Divider,
+  Anchor,
+  rem,
+  useMantineColorScheme 
+} from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import { 
+  IconMail,
+  IconLock,
+  IconSparkles,
+  IconStar,
+  IconHeart,
+  IconBrandGoogle,
+  IconBrandFacebook
+} from '@tabler/icons-react';
+import FloatingCircularHeader from '../../../components/layout/Header/FloatingCircularHeader';
+
+function LoginPage() {
+  const { colorScheme } = useMantineColorScheme();
+  const isDark = colorScheme === 'dark';
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  });
+  
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // Add your login logic here
+    console.log('Login attempt:', formData);
+    setTimeout(() => setLoading(false), 2000);
+  };
+
+  const handleSocialLogin = (provider) => {
+    console.log(`Login with ${provider}`);
+    // Add your social login logic here
+  };
+
+  return (
+    <Box
+      style={{
+        minHeight: '100vh',
+        height: '100vh',
+        overflow: 'hidden',
+        position: 'relative',
+        background: isDark 
+          ? 'linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%)'
+          : 'linear-gradient(135deg, #fef3c7 0%, #fde68a 10%, #f3e8ff 30%, #e0e7ff 60%, #dbeafe 90%, #f0f9ff 100%)',
+      }}
+    >
+      {/* Header */}
+      <FloatingCircularHeader />
+
+      {/* Background Decorative Elements */}
+      <Box
+        style={{
+          position: 'absolute',
+          top: '15%',
+          right: '10%',
+          color: isDark ? '#8b5cf6' : '#a855f7',
+          animation: 'gentleFloat 6s ease-in-out infinite',
+          opacity: 0.6,
+          zIndex: 1,
+        }}
+      >
+        <IconSparkles size={24} />
+      </Box>
+      <Box
+        style={{
+          position: 'absolute',
+          top: '25%',
+          left: '8%',
+          color: isDark ? '#f472b6' : '#ec4899',
+          animation: 'gentleFloat 7s ease-in-out infinite 1s',
+          opacity: 0.5,
+          zIndex: 1,
+        }}
+      >
+        <IconStar size={20} />
+      </Box>
+      <Box
+        style={{
+          position: 'absolute',
+          bottom: '20%',
+          right: '15%',
+          color: isDark ? '#facc15' : '#f59e0b',
+          animation: 'gentleFloat 8s ease-in-out infinite 2s',
+          opacity: 0.4,
+          zIndex: 1,
+        }}
+      >
+        <IconHeart size={18} />
+      </Box>
+      <Box
+        style={{
+          position: 'absolute',
+          bottom: '30%',
+          left: '12%',
+          color: isDark ? '#10b981' : '#059669',
+          animation: 'gentleFloat 9s ease-in-out infinite 3s',
+          opacity: 0.5,
+          zIndex: 1,
+        }}
+      >
+        <IconStar size={16} />
+      </Box>
+
+      {/* Main Content */}
+      <Container 
+        size="sm" 
+        style={{ 
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          zIndex: 10,
+          paddingTop: rem(80), // Account for header
+        }}
+      >
+        <Box
+          style={{
+            width: '100%',
+            maxWidth: rem(420),
+            background: isDark 
+              ? 'rgba(15, 15, 35, 0.6)'
+              : 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(24px)',
+            borderRadius: rem(28),
+            padding: isMobile ? rem(32) : rem(40),
+            border: isDark 
+              ? '1px solid rgba(139, 92, 246, 0.2)' 
+              : '1px solid rgba(139, 92, 246, 0.15)',
+            boxShadow: isDark
+              ? '0 25px 50px rgba(0, 0, 0, 0.3)'
+              : '0 25px 50px rgba(139, 92, 246, 0.15)',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Card Background Pattern */}
+          <Box
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: `
+                radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.05) 0%, transparent 60%)
+              `,
+              borderRadius: rem(28),
+            }}
+          />
+
+          <Stack gap="lg" style={{ position: 'relative', zIndex: 2 }}>
+            
+            {/* Header */}
+            <Box ta="center" mb="md">
+              <Group
+                justify="center"
+                mb="lg"
+                style={{
+                  background: 'linear-gradient(135deg, #8b5cf6 0%, #f472b6 100%)',
+                  backdropFilter: 'blur(12px)',
+                  borderRadius: rem(20),
+                  padding: `${rem(8)} ${rem(20)}`,
+                  display: 'inline-flex',
+                  boxShadow: '0 6px 20px rgba(139, 92, 246, 0.25)',
+                }}
+              >
+                <IconSparkles size={16} style={{ color: '#ffffff' }} />
+                <Text 
+                  size="sm" 
+                  fw={700}
+                  style={{ 
+                    color: '#ffffff',
+                    fontFamily: 'Nunito, sans-serif',
+                    letterSpacing: '0.5px',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Welcome Back
+                </Text>
+              </Group>
+
+              <Text
+                size={isMobile ? "1.8rem" : "2rem"}
+                fw={800}
+                mb="xs"
+                style={{
+                  fontFamily: 'Quicksand, sans-serif',
+                  color: isDark ? '#ffffff' : '#1e293b',
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.2,
+                }}
+              >
+                Sign in to your{' '}
+                <Text
+                  component="span"
+                  inherit
+                  style={{
+                    background: 'linear-gradient(135deg, #8b5cf6 0%, #f472b6 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  account
+                </Text>
+              </Text>
+
+              <Text
+                size="md"
+                style={{
+                  color: isDark ? '#cbd5e1' : '#64748b',
+                  fontFamily: 'Nunito, sans-serif',
+                  lineHeight: 1.5,
+                }}
+              >
+                Continue creating magical stories for your little ones
+              </Text>
+            </Box>
+
+            {/* Social Login Buttons */}
+            <Stack gap="sm">
+              <Button
+                size="md"
+                radius="xl"
+                variant="outline"
+                leftSection={<IconBrandGoogle size={20} />}
+                onClick={() => handleSocialLogin('google')}
+                style={{
+                  border: isDark ? '2px solid rgba(219, 68, 55, 0.3)' : '2px solid rgba(219, 68, 55, 0.2)',
+                  color: '#db4437',
+                  background: isDark ? 'rgba(219, 68, 55, 0.1)' : 'rgba(219, 68, 55, 0.05)',
+                  fontFamily: 'Nunito, sans-serif',
+                  fontWeight: 600,
+                  height: rem(48),
+                  transition: 'all 0.3s ease',
+                }}
+                styles={{
+                  root: {
+                    '&:hover': {
+                      background: isDark ? 'rgba(219, 68, 55, 0.15)' : 'rgba(219, 68, 55, 0.1)',
+                      transform: 'translateY(-1px)',
+                      boxShadow: '0 6px 20px rgba(219, 68, 55, 0.2)',
+                    }
+                  }
+                }}
+              >
+                Continue with Google
+              </Button>
+
+              <Button
+                size="md"
+                radius="xl"
+                variant="outline"
+                leftSection={<IconBrandFacebook size={20} />}
+                onClick={() => handleSocialLogin('facebook')}
+                style={{
+                  border: isDark ? '2px solid rgba(24, 119, 242, 0.3)' : '2px solid rgba(24, 119, 242, 0.2)',
+                  color: '#1877f2',
+                  background: isDark ? 'rgba(24, 119, 242, 0.1)' : 'rgba(24, 119, 242, 0.05)',
+                  fontFamily: 'Nunito, sans-serif',
+                  fontWeight: 600,
+                  height: rem(48),
+                  transition: 'all 0.3s ease',
+                }}
+                styles={{
+                  root: {
+                    '&:hover': {
+                      background: isDark ? 'rgba(24, 119, 242, 0.15)' : 'rgba(24, 119, 242, 0.1)',
+                      transform: 'translateY(-1px)',
+                      boxShadow: '0 6px 20px rgba(24, 119, 242, 0.2)',
+                    }
+                  }
+                }}
+              >
+                Continue with Facebook
+              </Button>
+            </Stack>
+
+            {/* Divider */}
+            <Divider 
+              label="or continue with email" 
+              labelPosition="center"
+              my="md"
+              styles={{
+                label: {
+                  color: isDark ? '#94a3b8' : '#64748b',
+                  fontFamily: 'Nunito, sans-serif',
+                  fontSize: rem(14),
+                  fontWeight: 500,
+                },
+                root: {
+                  borderColor: isDark ? 'rgba(139, 92, 246, 0.2)' : 'rgba(139, 92, 246, 0.15)',
+                }
+              }}
+            />
+
+            {/* Login Form */}
+            <form onSubmit={handleLogin}>
+              <Stack gap="md">
+                <TextInput
+                  label="Email"
+                  placeholder="Enter your email"
+                  leftSection={<IconMail size={18} />}
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  required
+                  size="md"
+                  radius="lg"
+                  styles={{
+                    label: {
+                      color: isDark ? '#e2e8f0' : '#374151',
+                      fontFamily: 'Nunito, sans-serif',
+                      fontWeight: 600,
+                      marginBottom: rem(8),
+                    },
+                    input: {
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.8)',
+                      border: isDark ? '2px solid rgba(139, 92, 246, 0.2)' : '2px solid rgba(139, 92, 246, 0.15)',
+                      color: isDark ? '#ffffff' : '#1e293b',
+                      fontFamily: 'Nunito, sans-serif',
+                      height: rem(48),
+                      '&:focus': {
+                        borderColor: '#8b5cf6',
+                        boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)',
+                      },
+                      '&::placeholder': {
+                        color: isDark ? '#94a3b8' : '#6b7280',
+                      }
+                    }
+                  }}
+                />
+
+                <PasswordInput
+                  label="Password"
+                  placeholder="Enter your password"
+                  leftSection={<IconLock size={18} />}
+                  value={formData.password}
+                  onChange={(e) => handleInputChange('password', e.target.value)}
+                  required
+                  size="md"
+                  radius="lg"
+                  styles={{
+                    label: {
+                      color: isDark ? '#e2e8f0' : '#374151',
+                      fontFamily: 'Nunito, sans-serif',
+                      fontWeight: 600,
+                      marginBottom: rem(8),
+                    },
+                    input: {
+                      background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.8)',
+                      border: isDark ? '2px solid rgba(139, 92, 246, 0.2)' : '2px solid rgba(139, 92, 246, 0.15)',
+                      color: isDark ? '#ffffff' : '#1e293b',
+                      fontFamily: 'Nunito, sans-serif',
+                      height: rem(48),
+                      '&:focus': {
+                        borderColor: '#8b5cf6',
+                        boxShadow: '0 0 0 3px rgba(139, 92, 246, 0.1)',
+                      },
+                      '&::placeholder': {
+                        color: isDark ? '#94a3b8' : '#6b7280',
+                      }
+                    }
+                  }}
+                />
+
+                <Group justify="flex-end" mt="xs">
+                  <Anchor 
+                    size="sm"
+                    style={{
+                      color: '#8b5cf6',
+                      fontFamily: 'Nunito, sans-serif',
+                      fontWeight: 500,
+                      textDecoration: 'none',
+                    }}
+                    onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                    onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+                  >
+                    Forgot password?
+                  </Anchor>
+                </Group>
+
+                <Button
+                  type="submit"
+                  size="md"
+                  radius="xl"
+                  loading={loading}
+                  style={{
+                    background: 'linear-gradient(135deg, #8b5cf6 0%, #f472b6 100%)',
+                    border: 'none',
+                    fontFamily: 'Nunito, sans-serif',
+                    fontWeight: 700,
+                    height: rem(48),
+                    fontSize: rem(16),
+                    boxShadow: '0 6px 20px rgba(139, 92, 246, 0.3)',
+                    transition: 'all 0.3s ease',
+                    marginTop: rem(8),
+                  }}
+                  styles={{
+                    root: {
+                      '&:hover': {
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 25px rgba(139, 92, 246, 0.4)',
+                      }
+                    }
+                  }}
+                >
+                  Sign In
+                </Button>
+              </Stack>
+            </form>
+
+            {/* Sign Up Link */}
+            <Text 
+              ta="center" 
+              size="sm"
+              style={{
+                color: isDark ? '#cbd5e1' : '#64748b',
+                fontFamily: 'Nunito, sans-serif',
+                marginTop: rem(16),
+              }}
+            >
+              Don't have an account?{' '}
+              <Anchor 
+                style={{
+                  color: '#8b5cf6',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+                onMouseEnter={(e) => e.target.style.textDecoration = 'underline'}
+                onMouseLeave={(e) => e.target.style.textDecoration = 'none'}
+              >
+                Sign up here
+              </Anchor>
+            </Text>
+          </Stack>
+        </Box>
+      </Container>
+
+      {/* Animations */}
+      <style jsx global>{`
+        @keyframes gentleFloat {
+          0%, 100% { 
+            transform: translateY(0px) rotate(0deg) scale(1); 
+            opacity: 0.6;
+          }
+          50% { 
+            transform: translateY(-8px) rotate(180deg) scale(1.1); 
+            opacity: 0.8;
+          }
+        }
+      `}</style>
+    </Box>
+  );
+}
+
+export default LoginPage;
